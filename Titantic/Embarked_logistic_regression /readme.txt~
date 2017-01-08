@@ -1,0 +1,1 @@
+This algorithm is still pretty simple logreg using sklearn. It is an improvment over simple in two ways. First It will incorporate information about the Class of the passengers (hence it's name). Second, I am going to use feature scaling, i'm not sure that will really help the performance but I might as well try.
