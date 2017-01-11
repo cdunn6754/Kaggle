@@ -1,0 +1,2 @@
+from sklearn.externals import joblib
+nn = joblib.load('nn.pkl')

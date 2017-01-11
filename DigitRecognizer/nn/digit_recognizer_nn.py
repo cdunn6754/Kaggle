@@ -22,15 +22,11 @@ X_test = np.multiply(X_test,(1.0/255.0))
 
 # Train
 nn = MLPClassifier(solver='lbfgs', alpha = 1e-5,
-                   hidden_layer_sizes = (200,), random_state=1)
+                   hidden_layer_sizes = (100,), random_state=1)
 print('\nTraining Now\n')
 nn.fit(X_train,Y_train)
 print(nn.score(X_train, Y_train))
 
-# Predicting
-
-Y_predict =  nn.predict(X_test)
-
-# Output for competition
-submission = pd.DataFrame({'label':Y_predict})
-submission.to_csv('nn_digit_recognizer.csv',index=False)
+# save the model 
+from sklearn.externals import joblib
+joblib.dump(nn,'nn.pkl')
