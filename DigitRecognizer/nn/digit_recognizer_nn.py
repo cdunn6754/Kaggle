@@ -22,7 +22,7 @@ X_test = np.multiply(X_test,(1.0/255.0))
 
 # Train
 nn = MLPClassifier(solver='lbfgs', alpha = 1e-5,
-                   hidden_layer_sizes = (100,), random_state=1)
+                   hidden_layer_sizes = (300,200,100), random_state=1)
 print('\nTraining Now\n')
 nn.fit(X_train,Y_train)
 print(nn.score(X_train, Y_train))
